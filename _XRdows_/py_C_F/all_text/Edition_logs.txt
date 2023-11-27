@@ -1,0 +1,19 @@
+ > 0.1 BETA
+ >     Code refactoring
+ > 0.2 BETA
+ >     Add plane war gameplay
+ > 0.3 BETA
+ >     Remove 'G_O_S (graphical operating system)' [not completely deleted (change the source code can reappear)]
+ >     Add 'E_L (Release History)'
+ > 0.4 BETA
+ >     Add 'mod'
+ > 0.5 BETA
+ >     Remove 'mod'
+ > 0.6 BETA
+ >     Add 'python_version'
+ > 0.7 BETA
+ >     Add 'G_O_S (graphical operating system)'
+ > 0.8 BETA
+ >     Add 'Developer mode'
+ > 0.9 BETA
+ >     Remove 'G_O_S'

@@ -1,0 +1,5 @@
+ > C_T = Command table
+ > _EXIT = exit
+ > _C_L  = Cancel the login
+ > P_W = plane war game
+ > _E_L = Edition logs
