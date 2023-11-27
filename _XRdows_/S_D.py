@@ -63,6 +63,9 @@ def C_Z(source_folder, output_filename):
             for file in files:
                 zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), source_folder))
 
+def hex_to_str(h):
+    return ''.join([chr(int(h[i:i+2], 16)) for i in range(0, len(h), 2)])
+
 if __name__ == '__main__':
     P_T()
     E_L()

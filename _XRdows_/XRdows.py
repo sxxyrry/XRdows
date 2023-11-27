@@ -13,7 +13,8 @@ from S_D import (
     P_W,
     E_L,
     C_T,
-    C_Z
+    C_Z,
+    hex_to_str
 )
 from consts import (
     folder,
@@ -115,7 +116,8 @@ def XRdows():
             elif command == 'Deve_mode_True':
                 time.sleep(1)
                 Deve_pw = input(f'{_8_E}')
-                if Deve_pw == 'XR12345wjsxx':
+                D_P_W = hex_to_str('58523132333435776a737878')
+                if Deve_pw == D_P_W:
                     print(f'{_9_E}')
                     with open(os.path.join(folder, './py_C_F/setup/deve_mode.py'), 'w') as file:
                         file.write('''Deve_mode = True''')
