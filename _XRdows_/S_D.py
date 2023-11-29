@@ -66,6 +66,10 @@ def C_Z(source_folder, output_filename):
 def hex_to_str(h):
     return ''.join([chr(int(h[i:i+2], 16)) for i in range(0, len(h), 2)])
 
+def binary_to_str(b):
+    binary_list = b.split()
+    return ''.join([chr(int(binary, 2)) for binary in binary_list])
+
 if __name__ == '__main__':
     P_T()
     E_L()

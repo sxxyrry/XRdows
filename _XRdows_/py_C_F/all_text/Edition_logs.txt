@@ -19,3 +19,5 @@
  >     Remove 'G_O_S'
  > 0.9 BETA __0.0.1__
  >     Update password detection mechanism
+ > 0.9 BETA __0.0.2__
+ >     Update password detection mechanism
