@@ -21,3 +21,5 @@
  >     Update password detection mechanism
  > 0.9 BETA __0.0.2__
  >     Update password detection mechanism
+ > 0.9 BETA __0.0.3__
+ >     Update password detection mechanism

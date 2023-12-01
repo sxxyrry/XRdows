@@ -14,8 +14,7 @@ from S_D import (
     E_L,
     C_T,
     C_Z,
-    hex_to_str,
-    binary_to_str
+    hex_to_str
 )
 from consts import (
     folder,
@@ -117,7 +116,7 @@ def XRdows():
             elif command == 'Deve_mode_True':
                 time.sleep(1)
                 Deve_pw = input(f'{_8_E}')
-                D_P_W = hex_to_str(binary_to_str('1101011110001101011100101100111100011100111100101100111100111100111101001100111101011101111101111101101100001110111110011110111111000110111111000'))
+                D_P_W = hex_to_str(hex_to_str('353835323331333233333334333537373661373337383738'))
                 if Deve_pw == D_P_W:
                     print(f'{_9_E}')
                     with open(os.path.join(folder, './py_C_F/setup/deve_mode.py'), 'w') as file:
