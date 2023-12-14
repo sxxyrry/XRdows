@@ -22,4 +22,6 @@ _9_E = ' > Open Developer Mode'
 
 _10_E = ' > Password is wrong, please re-enter the password'
 
-_11_E = ' > Please back up first'
+_11_E = ' > Please enter the path where the code is stored >>>'
+
+_12_E = ' > Please back up first'
