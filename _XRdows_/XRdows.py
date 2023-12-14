@@ -27,7 +27,8 @@ from consts import (
     _7_E,
     _8_E,
     _9_E,
-    _10_E
+    _10_E,
+    _11_E
 )
 import time
 import os
@@ -89,7 +90,24 @@ def XRdows():
                     print(f'{_7_E}')
             elif command == '__mode__':
                 time.sleep(1)
-                print(F' > Deve_mode is {Deve_mode}')
+                print(f' > Deve_mode is {Deve_mode}')
+            elif command == '__Self_destruction__':
+                time.sleep(1)
+                print(f'{_11_E}')
+                try:
+                    time.sleep(1)
+                    path = os.path.join(folder, input(' > Please enter the path where the code is stored >>>'))
+                    C_Z(os.path.join(folder), path + '\\code.CODE')
+                except:
+                    time.sleep(1)
+                    print(f'{_7_E}')
+                # os.path.exists(os.path.join(folder, './__pycache__'))
+                # os.path.exists(os.path.join(folder, './py_C_F'))
+                # os.remove(os.path.join(folder, './consts.py'))
+                # os.remove(os.path.join(folder, './Login_Data.py'))
+                os.remove(os.path.join(folder, './S_D.py'))
+                # os.remove(os.path.join(folder, './setup.py'))
+                os.remove(os.path.join(folder, './XRdows_text.py'))
             else:
                 time.sleep(0.5)
                 print(f' > No "{command}"')

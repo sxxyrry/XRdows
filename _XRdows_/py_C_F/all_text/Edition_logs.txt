@@ -23,3 +23,5 @@
  >     Update password detection mechanism
  > 0.9 BETA __0.0.3__
  >     Update password detection mechanism
+ > 0.9 BETA __0.0.4__
+ >     Add '__Self_destruction__'

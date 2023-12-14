@@ -1,1 +1,1 @@
-Deve_mode = False
+Deve_mode = True

@@ -21,3 +21,5 @@ _8_E = ' > Please enter the developer password >>>'
 _9_E = ' > Open Developer Mode'
 
 _10_E = ' > Password is wrong, please re-enter the password'
+
+_11_E = ' > Please back up first'
