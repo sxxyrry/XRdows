@@ -3,8 +3,12 @@ import os
 import sys
 import subprocess
 import shutil
-from XRdows_text import XRdows, Edition_logs, command_table
-from Login_Data import L_D
+from XRdows_text import(
+    XRdows,
+    Edition_logs,
+    command_table
+)
+# from Login_Data import L_D
 import zipfile
 from consts import folder
 
@@ -22,7 +26,7 @@ def prompt():
     time.sleep(0.5)
     print(' > Version : 0.9 beta')
     time.sleep(0.5)
-    print(' > by : ' + "'" + '是星星与然然呀' + "'")
+    print(' > by : \'是星星与然然呀\'')
 
 '''
 def G_O_S():
@@ -37,7 +41,7 @@ def E_L():
 def P_T():
     XRDOWS()
     prompt()
-    L_D()
+    # L_D()
 
 def C_L():
     os.remove(os.path.join(folder, './py_C_F/Login_Data/Login_Data.py'))

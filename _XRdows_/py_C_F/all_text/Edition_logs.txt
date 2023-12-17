@@ -25,3 +25,9 @@
  >     Update password detection mechanism
  > 0.9 BETA __0.0.4__
  >     Add '__Self_destruction__'
+ > 0.9 BETA __0.0.5__
+ >     Add '_I_H_'
+ >     Remove 'Login_Data'
+ >     Remove '_C_L'
+ >     Remove 'setup'
+ >     Update deve_mode switch

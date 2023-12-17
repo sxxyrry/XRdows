@@ -2,7 +2,7 @@ import pathlib
 
 folder = pathlib.Path(__file__).parent.resolve()
 
-_1_E = ' > Please enter the command (_EXIT = exit , C_T = Command table) >>>'
+_1_E = ' > Please enter the command (_EXIT = exit , C_T = Command table , _I_H_ = introduce html) >>>'
 
 _2_E = ' > The plane war game is game is launching'
 
