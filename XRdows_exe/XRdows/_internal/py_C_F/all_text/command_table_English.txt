@@ -1,6 +1,0 @@
- > C_T = Command table
- > _EXIT = exit
- > P_W = plane war game
- > _E_L = Edition logs
- > _I_H_ = introduce html
- > print() = print
