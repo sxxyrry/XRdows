@@ -31,8 +31,6 @@ def prompt():
     time.sleep(0.5)
     print(' > Program name : XRdows')
     time.sleep(0.5)
-    print(' > Version : 0.9 beta')
-    time.sleep(0.5)
     print(' > by : \'是星星与然然呀\'')
 
 '''
