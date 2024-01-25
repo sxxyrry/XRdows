@@ -3,6 +3,7 @@ import ctypes
 ctypes.windll.kernel32.SetConsoleTitleW('XRdows')
 
 import webbrowser
+import shutil
 from XRdows_text import command_table
 # from setup import Deve_mode
 from S_D import (
@@ -13,15 +14,16 @@ from S_D import (
     C_T,
     C_Z,
     hex_to_str,
-    play_music,
-    M_P
+    M_P,
+    R_py_F,
+    R_exe_F,
+    play_music
 )
 from consts import (
     folder,
     _1_E,
     _2_E,
     _3_E,
-    _4_E,
     _5_E,
     _6_E,
     _7_E,
@@ -30,18 +32,22 @@ from consts import (
     _10_E,
     _11_E,
     _12_E,
-    _13_E,
-    _14_E
+    _13_E
 )
 import time
 import os
 
+shutil.rmtree(os.path.join(folder, './__pycache__'))
+
 class __XRdows_total__():
+    def __init__(self):
+
+        P_T()
+
     def XRdows_N_D(self):
 
         running = True
 
-        P_T()
         # webbrowser.open(os.path.join(folder, './py_C_F/introduce/introduce.html'))
 
         while running:
@@ -69,7 +75,7 @@ class __XRdows_total__():
             elif command == '_E_L':
                 E_L()
             elif command == '_I_H_':
-                webbrowser.open(os.path.join(folder, './py_C_F/introduce/introduce.html'))
+                webbrowser.open(os.path.join(folder, './py_C_F/html/introduce.html'))
                 time.sleep(1)
             elif command == 'Deve_mode_True':
                 time.sleep(1)
@@ -90,6 +96,29 @@ class __XRdows_total__():
                 print(f' > {content}')
             elif command == 'M_P':
                 M_P()
+            elif command == 'R_py_F':
+                R_py_F()
+            elif command == 'R_exe_F':
+                R_exe_F()
+            elif command == 'M_P_D':
+                folder_path = os.path.join(folder, './music_file')
+                print(' > The file name format is \'music{name}\'')
+                for filename in os.listdir(folder_path):
+                    if 'music' in filename:
+                        temp = ''.join(filename)
+                        list_temp_ = temp.split('music')
+                        if list_temp_[0] == '':
+                            if os.path.isfile(os.path.join(folder_path, filename)):
+                                with open(os.path.join(folder_path, filename), 'r', encoding='UTF-8') as file:
+                                    file_name = ''.join(file.name)
+                                    list_ = file_name.split('.')
+                                    list_len_ = len(list_) - 1
+                                    if list_[list_len_] == 'mp3' or list_[list_len_] == 'flac':
+                                        play_music(file.name)
+                                    else:
+                                        print(f' > This file ({filename}) is not playable (mp3 or flac file suffix required)')
+                        else:
+                            print(' > The file name is formatted incorrectly')
             else:
                 time.sleep(0.5)
                 print(f' > No "{command}"')
@@ -123,7 +152,7 @@ class __XRdows_total__():
             elif command == '_E_L':
                 E_L()
             elif command == '_I_H_':
-                webbrowser.open(os.path.join(folder, './py_C_F/introduce/introduce.html'))
+                webbrowser.open(os.path.join(folder, './py_C_F/html/introduce.html'))
                 time.sleep(1)
             elif command == 'Deve_mode_False':
                 running = False
@@ -161,9 +190,9 @@ class __XRdows_total__():
                     time.sleep(1)
                     print(f'{_7_E}')
                 time.sleep(1)
-                # os.path.exists(os.path.join(folder, './__pycache__'))
-                # os.path.exists(os.path.join(folder, './py_C_F'))
-                # os.remove(os.path.join(folder, './consts.py'))
+                # shutil.rmtree(os.path.join(folder, './__pycache__'))
+                # shutil.rmtree(os.path.join(folder, './py_C_F'))
+                # os.remove(os.path.join(folder, './consts.py')) 
                 # os.remove(os.path.join(folder, './Login_Data.py'))
                 os.remove(os.path.join(folder, './S_D.py'))
                 # os.remove(os.path.join(folder, './setup.py'))
@@ -173,6 +202,29 @@ class __XRdows_total__():
                 print(f' > {content}')
             elif command == 'M_P':
                 M_P()
+            elif command == 'R_py_F':
+                R_py_F()
+            elif command == 'R_exe_F':
+                R_exe_F()
+            elif command == 'M_P_D':
+                folder_path = os.path.join(folder, './music_file')
+                print(' > The file name format is \'music{name}\'')
+                for filename in os.listdir(folder_path):
+                    if 'music' in filename:
+                        temp = ''.join(filename)
+                        list_temp_ = temp.split('music')
+                        if list_temp_[0] == '':
+                            if os.path.isfile(os.path.join(folder_path, filename)):
+                                with open(os.path.join(folder_path, filename), 'r', encoding='UTF-8') as file:
+                                    file_name = ''.join(file.name)
+                                    list_ = file_name.split('.')
+                                    list_len_ = len(list_) - 1
+                                    if list_[list_len_] == 'mp3' or list_[list_len_] == 'flac':
+                                        play_music(file.name)
+                                    else:
+                                        print(f' > This file ({filename}) is not playable (mp3 or flac file suffix required)')
+                        else:
+                            print(' > The file name is formatted incorrectly')
             else:
                 time.sleep(0.5)
                 print(f' > No "{command}"')
