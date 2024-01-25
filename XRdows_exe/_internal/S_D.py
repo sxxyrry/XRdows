@@ -14,7 +14,9 @@ from XRdows_text import(
 from consts import (
     folder,
     _14_E,
-    _15_E
+    _15_E,
+    _16_E,
+    _17_E
 )
 
 def XRDOWS():
@@ -48,12 +50,6 @@ def P_T():
     prompt()
     # L_D()
 
-def C_L():
-    os.remove(os.path.join(folder, './py_C_F/Login_Data/Login_Data.py'))
-    shutil.rmtree(os.path.join(folder, './py_C_F/Login_Data/__pycache__'))
-    time.sleep(0.5)
-    print(' > Login canceled')
-
 def C_T():
     time.sleep(0.5)
     print(f'{command_table}')
@@ -80,6 +76,7 @@ def play_music(file_path):
     pygame.mixer.init()
     music_file = pygame.mixer.Sound(os.path.join(file_path))
     music_file.play()
+    time.sleep(music_file.get_length())
 
 def M_P():
     try:
@@ -88,6 +85,29 @@ def M_P():
     except:
         print(f'{_15_E}')
         M_P()
+
+def R_py_F():
+    try:
+        file_path = os.path.join(input(f'{_16_E}'))
+        with open(file_path, 'r', encoding='UTF-8') as file:
+            try:
+                while 1:
+                    exec(file.read())
+                    break
+            except Exception as error:
+                print(f' > Error is {error}')
+                R_py_F()
+    except:
+        print(f'{_15_E}')
+        R_py_F()
+
+def R_exe_F():
+    try:
+        file_path = input(f'{_17_E}')
+        subprocess.run(file_path)
+    except:
+        print(f'{_15_E}')
+        R_exe_F()
 
 if __name__ == '__main__':
     P_T()

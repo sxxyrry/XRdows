@@ -76,6 +76,7 @@ def play_music(file_path):
     pygame.mixer.init()
     music_file = pygame.mixer.Sound(os.path.join(file_path))
     music_file.play()
+    time.sleep(music_file.get_length())
 
 def M_P():
     try:

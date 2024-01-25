@@ -37,7 +37,10 @@ from consts import (
 import time
 import os
 
-shutil.rmtree(os.path.join(folder, './__pycache__'))
+pycache = os.path.join(folder, './__pycache__')
+
+if os.path.exists(pycache):
+    shutil.rmtree(pycache)
 
 class __XRdows_total__():
     def __init__(self):
