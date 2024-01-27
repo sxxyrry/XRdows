@@ -45,3 +45,6 @@
  >     Updated the function of playing music (removed "play_music" in S_D.py files, added "play_music" and "sleep" in XRdows_main.py files)
  >     Update the logic and name
  >     Add music files
+ > 1.0 BETA __0.0.3__ V
+ >     Add 'Version'
+ >     Add 'Prompts'

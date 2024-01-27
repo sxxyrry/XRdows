@@ -19,6 +19,20 @@ from consts import (
     _17_E
 )
 
+def V():
+    E_L_T = ''.join(Edition_logs)
+    E_L_T_L = E_L_T.split('\n')
+    L_ = []
+    for text in E_L_T_L:
+        if 'V' in text:
+            L_.append(text)
+    text_1 = L_[len(L_) - 1].split(' > ')
+    text_2 = text_1[1].split(' V')
+    Version = text_2[0]
+    return Version
+
+Version = V()
+
 def XRDOWS():
     time.sleep(0.5)
     print(f'{XRdows}')
@@ -32,6 +46,11 @@ def prompt():
     print(' > Program name : XRdows')
     time.sleep(0.5)
     print(' > by : \'是星星与然然呀\'')
+    time.sleep(0.5)
+    print(' > Note that the \'BETA\' in the version number is the major version number 0 (beta version)')
+    print(' > For example, \'XRdows 1.0 BETA __0.0.1__ V\' means that the XRdows version is \'0.1.0_0.0.1\'')
+    time.sleep(0.5)
+    print(f' > Version : {Version}')
 
 '''
 def G_O_S():
