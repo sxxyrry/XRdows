@@ -2,7 +2,7 @@ import time
 import os
 import sys
 import subprocess
-import shutil
+import datetime
 import zipfile
 import pygame
 from XRdows_text import(
@@ -69,20 +69,49 @@ def C_Z(source_folder, output_filename):
 def hex_to_str(h):
     return ''.join([chr(int(h[i:i+2], 16)) for i in range(0, len(h), 2)])
 
-def play_music(file_path):
-    pygame.init()
-    pygame.mixer.init()
-    music_file = pygame.mixer.Sound(os.path.join(file_path))
-    music_file.play()
-    time.sleep(music_file.get_length())
-
-def M_P():
+'''
+def play_music(file_path = '', file_list = []):
     try:
-        file_path = input(f'{_14_E}')
-        play_music(file_path)
+        def sleep(music_file):
+            music_file_len_ = int(music_file.get_length()) + 1
+            start = time.time()
+            while 1:
+                now = time.time()
+                if int(now - start) <= music_file_len_:
+                    # print(int(now - start), music_file_len_)
+                    pass
+                else:
+                    raise RuntimeWarning()
+        pygame.init()
+        pygame.mixer.init()
+        if file_list != []:
+            try:
+                next_music = ''.join(file_list.pop(0))
+                # print(next_music)
+                
+                #pygame.mixer.Sound.load(next_music)
+                music_file = pygame.mixer.Sound(next_music)
+                music_file.play()
+                sleep(music_file)
+            except IndexError:
+                return
+        elif file_path != '':
+            music_file = pygame.mixer.Sound(os.path.join(file_path))
+            music_file.play()
+            sleep(music_file)
+            return
+    except:
+        return
+
+'''
+        
+def M_P(self_, mode='F_D'):
+    try:
+        file_path = os.path.join(input(f'{_14_E}'))
+        self_.play_music(file_path, mode=mode)
     except:
         print(f'{_15_E}')
-        M_P()
+        M_P(self_, mode)
 
 def R_py_F():
     try:

@@ -17,7 +17,7 @@ from S_D import (
     M_P,
     R_py_F,
     R_exe_F,
-    play_music
+    pygame
 )
 from consts import (
     folder,
@@ -44,10 +44,56 @@ if os.path.exists(pycache):
 
 class __XRdows_total__():
     def __init__(self):
+        self.music = 0
 
         P_T()
+    
+    def sleep(self, music_file):
+        self.music_file = music_file
+        self.music_file_len_ = int(music_file.get_length()) + 1
+        self.start = time.time()
+        while 1:
+            self.now = time.time()
+            if int(self.now - self.start) <= self.music_file_len_:
+                # print(int(now - start), music_file_len_)
+                if self.mode == 'F_D':
+                    self.XRdows_F_D()
+                elif self.mode == 'T_D':
+                    self.XRdows_T_D()
+            else:
+                raise RuntimeWarning()
+    def play_music(self, file_path = '', file_list = [], mode = 'F_D'):
+        self.mode = mode
+        self.file_path = file_path
+        self.file_list = file_list
+        if self.music >= 1:
+            self.music = 0
+            self.music_file.stop()
+        try:
+            pygame.init()
+            pygame.mixer.init()
+            if self.file_list != []:
+                try:
+                    self.music += 1
+                    self.next_music = ''.join(file_list.pop(0))
+                    # print(next_music)
+                    
+                    #pygame.mixer.Sound.load(next_music)
+                    self.music_file = pygame.mixer.Sound(self.next_music)
+                    self.music_file.play()
+                    self.sleep(self.music_file)
+                except IndexError:
+                    return
+            elif self.file_path != '':
+                self.music += 1
+                self.music_file = pygame.mixer.Sound(os.path.join(file_path))
+                self.music_file.play()
+                self.sleep(self.music_file)
+                return
+        except:
+            return
 
-    def XRdows_N_D(self):
+    def XRdows_F_D(self):
 
         running = True
 
@@ -87,7 +133,7 @@ class __XRdows_total__():
                 if Deve_pw == D_P_W:
                     print(f'{_9_E}')
                     running = False
-                    XRdows_T.XRdows_D()
+                    self.XRdows_T_D()
                 else:
                     time.sleep(1)
                     print(f'{_10_E}')
@@ -98,26 +144,30 @@ class __XRdows_total__():
                 content = input(f'{_13_E}')
                 print(f' > {content}')
             elif command == 'M_P':
-                M_P()
+                M_P(self, 'F_D')
             elif command == 'R_py_F':
                 R_py_F()
             elif command == 'R_exe_F':
                 R_exe_F()
             elif command == 'M_P_D':
                 folder_path = os.path.join(folder, './music_file')
-                print(' > The file name format is \'music{name}\'')
+                print(' > The file name format is \'music_{i(1 start)}_{name}\'')
+                file_list_ = []
+                i = 0
                 for filename in os.listdir(folder_path):
-                    if 'music' in filename:
+                    i += 1
+                    if f'music_{i}_' in filename:
                         temp = ''.join(filename)
                         list_temp_ = temp.split('music')
                         if list_temp_[0] == '':
                             if os.path.isfile(os.path.join(folder_path, filename)):
+                                file_list_.append([os.path.join(folder_path+'/'+filename)])
                                 with open(os.path.join(folder_path, filename), 'r', encoding='UTF-8') as file:
                                     file_name = ''.join(file.name)
                                     list_ = file_name.split('.')
                                     list_len_ = len(list_) - 1
                                     if list_[list_len_] == 'mp3' or list_[list_len_] == 'flac':
-                                        play_music(file.name)
+                                        self.play_music(file_list=file_list_, mode='F_D')
                                     else:
                                         print(f' > This file ({filename}) is not playable (mp3 or flac file suffix required)')
                         else:
@@ -126,7 +176,7 @@ class __XRdows_total__():
                 time.sleep(0.5)
                 print(f' > No "{command}"')
 
-    def XRdows_D(self):
+    def XRdows_T_D(self):
 
         running = True
 
@@ -159,7 +209,7 @@ class __XRdows_total__():
                 time.sleep(1)
             elif command == 'Deve_mode_False':
                 running = False
-                XRdows_T.XRdows_N_D()
+                self.XRdows_F_D()
             elif command == 'C_F':
                 try:
                     time.sleep(0.5)
@@ -204,7 +254,7 @@ class __XRdows_total__():
                 content = input(f'{_13_E}')
                 print(f' > {content}')
             elif command == 'M_P':
-                M_P()
+                M_P(self, 'T_D')
             elif command == 'R_py_F':
                 R_py_F()
             elif command == 'R_exe_F':
@@ -212,18 +262,20 @@ class __XRdows_total__():
             elif command == 'M_P_D':
                 folder_path = os.path.join(folder, './music_file')
                 print(' > The file name format is \'music{name}\'')
+                file_list_ = []
                 for filename in os.listdir(folder_path):
                     if 'music' in filename:
                         temp = ''.join(filename)
                         list_temp_ = temp.split('music')
                         if list_temp_[0] == '':
                             if os.path.isfile(os.path.join(folder_path, filename)):
+                                file_list_.append([filename])
                                 with open(os.path.join(folder_path, filename), 'r', encoding='UTF-8') as file:
                                     file_name = ''.join(file.name)
                                     list_ = file_name.split('.')
                                     list_len_ = len(list_) - 1
                                     if list_[list_len_] == 'mp3' or list_[list_len_] == 'flac':
-                                        play_music(file.name)
+                                        self.play_music(file_list=file_list_, mode='T_D')
                                     else:
                                         print(f' > This file ({filename}) is not playable (mp3 or flac file suffix required)')
                         else:
@@ -235,4 +287,4 @@ class __XRdows_total__():
 XRdows_T = __XRdows_total__()
 
 if __name__ == '__main__':
-    XRdows_T.XRdows_N_D()
+    XRdows_T.XRdows_F_D()

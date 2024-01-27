@@ -41,3 +41,7 @@
  >     Add 'R_py_F'
  >     Add 'R_exe_F'
  >     Add 'M_P_D'
+ > 1.0 BETA __0.0.2__ V
+ >     Updated the function of playing music (removed "play_music" in S_D.py files, added "play_music" and "sleep" in XRdows_main.py files)
+ >     Update the logic and name
+ >     Add music files
