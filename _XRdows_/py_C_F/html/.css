@@ -1,3 +1,4 @@
+/*
 body.How_to_use How-to-use titles {
     color: rgb(0, 150, 255);
     user-select: none;
@@ -9,6 +10,7 @@ body.How_to_use How-to-use contents {
     user-select: none;
     text-align: center;
 }
+*/
 
 body.introduce introduce titles {
     color: rgb(0, 150, 255);
@@ -36,6 +38,7 @@ diycolor *::before {
     color: var(--clr);
 }
 
+/*
 diycolor.az {
     user-select: none;
     position: relative;
@@ -57,6 +60,7 @@ diycolor.az *::before {
     margin-inline-end: 0px;
     font-weight: bold;
 }
+*/
 
 .hide {
     color: rgba(0, 0, 0, 0);

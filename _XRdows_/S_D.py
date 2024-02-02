@@ -2,7 +2,6 @@ import time
 import os
 import sys
 import subprocess
-import datetime
 import zipfile
 import pygame
 from XRdows_text import(
@@ -10,13 +9,13 @@ from XRdows_text import(
     Edition_logs,
     command_table
 )
-# from Login_Data import L_D
 from consts import (
     folder,
     _14_E,
     _15_E,
     _16_E,
-    _17_E
+    _17_E,
+    _18_E
 )
 
 def V():
@@ -24,7 +23,7 @@ def V():
     E_L_T_L = E_L_T.split('\n')
     L_ = []
     for text in E_L_T_L:
-        if 'V' in text:
+        if 'V' and 'BETA' in text:
             L_.append(text)
     text_1 = L_[len(L_) - 1].split(' > ')
     text_2 = text_1[1].split(' V')
@@ -52,11 +51,6 @@ def prompt():
     time.sleep(0.5)
     print(f' > Version : {Version}')
 
-'''
-def G_O_S():
-    subprocess.run(os.path.join(folder, './py_C_F/G_O_S/G_O_S.exe'))
-'''
-
 def E_L():
     time.sleep(0.5)
     print(f'{Edition_logs}')
@@ -65,7 +59,6 @@ def E_L():
 def P_T():
     XRDOWS()
     prompt()
-    # L_D()
 
 def C_T():
     time.sleep(0.5)
@@ -88,43 +81,7 @@ def C_Z(source_folder, output_filename):
 def hex_to_str(h):
     return ''.join([chr(int(h[i:i+2], 16)) for i in range(0, len(h), 2)])
 
-'''
-def play_music(file_path = '', file_list = []):
-    try:
-        def sleep(music_file):
-            music_file_len_ = int(music_file.get_length()) + 1
-            start = time.time()
-            while 1:
-                now = time.time()
-                if int(now - start) <= music_file_len_:
-                    # print(int(now - start), music_file_len_)
-                    pass
-                else:
-                    raise RuntimeWarning()
-        pygame.init()
-        pygame.mixer.init()
-        if file_list != []:
-            try:
-                next_music = ''.join(file_list.pop(0))
-                # print(next_music)
-                
-                #pygame.mixer.Sound.load(next_music)
-                music_file = pygame.mixer.Sound(next_music)
-                music_file.play()
-                sleep(music_file)
-            except IndexError:
-                return
-        elif file_path != '':
-            music_file = pygame.mixer.Sound(os.path.join(file_path))
-            music_file.play()
-            sleep(music_file)
-            return
-    except:
-        return
-
-'''
-        
-def M_P(self_, mode='F_D'):
+def M_P(self_, mode='F_D' or 'T_D'):
     try:
         file_path = os.path.join(input(f'{_14_E}'))
         self_.play_music(file_path, mode=mode)
@@ -154,6 +111,17 @@ def R_exe_F():
     except:
         print(f'{_15_E}')
         R_exe_F()
+
+def image_p(self_, mode='F_D' or 'T_D'):
+    try:
+        image_path = input(f'{_18_E}')
+        print(os.path.join(image_path))
+        screen = pygame.display.set_mode((600,600))
+        image = pygame.image.load(os.path.join(image_path)).convert()
+        self_.draw_images_(image, screen, mode)
+    except:
+        print(f'{_15_E}')
+        image_p(self_, mode)
 
 if __name__ == '__main__':
     P_T()

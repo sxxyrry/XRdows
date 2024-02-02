@@ -35,3 +35,5 @@ _15_E = ' > Please try again'
 _16_E = ' > Please enter the python file path >>>'
 
 _17_E = ' > Please enter the executable file path >>>'
+
+_18_E = ' > Please enter the image file path >>>'

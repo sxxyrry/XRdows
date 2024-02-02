@@ -48,3 +48,11 @@
  > 1.0 BETA __0.0.3__ V
  >     Add 'Version'
  >     Add 'Prompts'
+ > 1.0 BETA __0.0.4__ V
+ >     Add 'Force_quit'
+ >     Open-source protocol (A-Source) added
+ >     Update the 'Version' system
+ >     Add description of open-source protocol (A-Source) (html, and is use)
+ >     Remove How-to-use html
+ >     Add 'I_P'
+ >     Add 'R_I_P'

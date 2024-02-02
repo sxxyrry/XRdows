@@ -8,3 +8,6 @@
  > R_py_F = Run python file
  > R_exe_F = Run executable
  > M_P_D = Music player (default)
+ > Force_quit = Force quit (not recommended)
+ > I_P = image Preview
+ > R_I_P = remove image preview windows
