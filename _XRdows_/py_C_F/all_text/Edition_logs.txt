@@ -56,3 +56,7 @@
  >     Remove How-to-use html
  >     Add 'I_P'
  >     Add 'R_I_P'
+ > 1.0 BETA __0.0.5__ V
+ >     Bug fixes
+ >     Add precursor file (XRthon) (need to go to the afdian.net website and find '是星星与然然呀' to download XRthon_front_file.7z file)
+ >     Revise some details

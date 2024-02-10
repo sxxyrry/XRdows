@@ -49,6 +49,10 @@ def prompt():
     print(' > Note that the \'BETA\' in the version number is the major version number 0 (beta version)')
     print(' > For example, \'XRdows 1.0 BETA __0.0.1__ V\' means that the XRdows version is \'0.1.0_0.0.1\'')
     time.sleep(0.5)
+    print(' > Storage location of the front file: \'./front_file/...\'')
+    time.sleep(0.5)
+    print(' > The pre-file has to go to the afdian.net website to find \'是星星与然然呀\' to download the file')
+    time.sleep(0.5)
     print(f' > Version : {Version}')
 
 def E_L():
@@ -115,7 +119,6 @@ def R_exe_F():
 def image_p(self_, mode='F_D' or 'T_D'):
     try:
         image_path = input(f'{_18_E}')
-        print(os.path.join(image_path))
         screen = pygame.display.set_mode((600,600))
         image = pygame.image.load(os.path.join(image_path)).convert()
         self_.draw_images_(image, screen, mode)
