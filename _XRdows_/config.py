@@ -13,9 +13,9 @@ class config_t():
     def XRthon(self):
         if 'XRthon' in self.configs:
             if self.configs['XRthon'] == True:
-                XRthon_F_isexists = os.path.exists(os.path.join(folder, './front_file/XRthon_front_file/_XRthon_/main.py'))
+                XRthon_F_isexists = os.path.exists(os.path.join(folder, './mods_file/XRthon_mods_file/_XRthon_/main.py'))
                 if XRthon_F_isexists == True:
-                    from front_file.XRthon_front_file._XRthon_.main import mains
+                    from mods_file.XRthon_mods_file._XRthon_.main import mains
                     mains()
                 elif XRthon_F_isexists == False:
                     print(' > The prefix file (XRthon) file does not exist')

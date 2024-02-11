@@ -60,3 +60,5 @@
  >     Bug fixes
  >     Add precursor file (XRthon) (need to go to the afdian.net website and find '是星星与然然呀' to download XRthon_front_file.7z file)
  >     Revise some details
+ > 1.0 BETA __0.0.6__ V
+ >     Changed the name of 'front_file' to 'mods_file' (so, XRthon legacy (XRthon_front_file version) is not supported)
