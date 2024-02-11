@@ -18,7 +18,7 @@ class config_t():
                     from mods_file.XRthon_mods_file._XRthon_.main import mains
                     mains()
                 elif XRthon_F_isexists == False:
-                    print(' > The prefix file (XRthon) file does not exist')
+                    print(' > The mods file (XRthon) file does not exist')
             elif self.configs['XRthon'] == False:
                 print(' > You don\'t have XRthon enabled')
             else:
