@@ -1,6 +1,11 @@
 import pathlib
+import os
+import yaml
 
 folder = pathlib.Path(__file__).parent.resolve()
+
+with open(os.path.join(folder, './config/config.yaml'), 'r') as f:
+    configs = yaml.safe_load(f)
 
 _1_E = ' > Please enter the command (_EXIT = exit , C_T = Command table , _I_H_ = introduce html) >>>'
 
