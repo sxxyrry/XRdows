@@ -64,3 +64,6 @@
  >     Changed the name of 'front_file' to 'mods_file' (so, XRthon legacy (XRthon_front_file version) is not supported)
  > 1.1 BETA V
  >     Update custom mods
+ > 1.1 BETA __0.0.6__ V
+ >     Update logic
+ >     Remove EXE Version

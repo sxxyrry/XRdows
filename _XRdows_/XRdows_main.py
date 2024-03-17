@@ -6,26 +6,54 @@ import shutil
 import pygame
 import os
 import time
-from XRdows_F_D import XRdows_F_D
-from XRdows_T_D import XRdows_T_D
+#from XRdows_F_D import XRdows_F_D
+#from XRdows_T_D import XRdows_T_D
 from S_D import P_T
 from consts import folder
 
 pygame.init()
 pygame.mixer.init()
 
-pycache = os.path.join(folder, './__pycache__')
-
-if os.path.exists(pycache):
-    shutil.rmtree(pycache)
-
 class __XRdows_total__():
     def __init__(self):
+        with open(os.path.join(folder, './XRdows_F_D.py'), 'r', encoding='UTF-8') as f:
+            r_F_D = f.read()
+            a_F_D = r_F_D + '''
+        else:
+            print(f' > No "{command}"')'''
+        with open(os.path.join(folder, './XRdows_T_D.py'), 'r', encoding='UTF-8') as f:
+            r_T_D = f.read()
+            a_T_D = r_T_D + '''
+        else:
+            print(f' > No "{command}"')'''
+        with open(os.path.join(folder, './py_C_F/XRdows/XRdows_F_D.py'), 'w', encoding='UTF-8') as f:
+            f.write(a_F_D)
+        with open(os.path.join(folder, './py_C_F/XRdows/XRdows_T_D.py'), 'w', encoding='UTF-8') as f:
+            f.write(a_T_D)
+        
+        from py_C_F.XRdows.XRdows_F_D import XRdows_F_D
+        from py_C_F.XRdows.XRdows_T_D import XRdows_T_D
+        
         self.XRdows_F_D = XRdows_F_D
         self.XRdows_T_D = XRdows_T_D
+
+        with open(os.path.join(folder, './py_C_F/XRdows/XRdows_F_D.py'), 'w', encoding='UTF-8') as f:
+            f.write('')
+        with open(os.path.join(folder, './py_C_F/XRdows/XRdows_T_D.py'), 'w', encoding='UTF-8') as f:
+            f.write('')
+
         self.music = 0
 
         P_T()
+
+        self.XRdows_F_D(self)
+
+        pycache1 = os.path.join(folder, './__pycache__')
+        pycache2 = os.path.join(folder, './py_C_F/XRdows/__pycache__')
+        if os.path.exists(pycache1):
+            shutil.rmtree(pycache1)
+        if os.path.exists(pycache2):
+            shutil.rmtree(pycache2)
 
     def draw_img(self, surf, img, size, x, y):
         self.surf = surf
@@ -95,7 +123,4 @@ class __XRdows_total__():
             return
 
 
-XRdows_T = __XRdows_total__()
-
-if __name__ == '__main__':
-    XRdows_T.XRdows_F_D(XRdows_T)
+# XRdows_T = __XRdows_total__()

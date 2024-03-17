@@ -11,4 +11,4 @@
  > Force_quit = Force quit (not recommended)
  > I_P = image Preview
  > R_I_P = remove image preview windows
- > XRthon = XRthon (front file, So, you'll need to download it again)
+ > XRthon = XRthon (mods file, So, you'll need to download it again)

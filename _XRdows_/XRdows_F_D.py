@@ -2,7 +2,6 @@ import webbrowser
 import pygame
 import os
 import time
-from XRthon_config import XRthon
 from S_D import (
     E_P,
     P_W,
@@ -46,7 +45,7 @@ def XRdows_F_D(self):
             E_P()
             time.sleep(1)
             running = False
-            os._exit(0)
+            return
         elif command == ':wq':
             print(' > :wq')
         elif command == '_E_L':
@@ -112,7 +111,8 @@ def XRdows_F_D(self):
         elif command == 'Force_quit':
             os._exit(0)
         elif command == 'XRthon':
+            from XRthon import XRthon
             XRthon()
-        else:
-            time.sleep(0.5)
-            print(f' > No "{command}"')
+        elif command == 'XRthon_editor':
+            from XRthon_editor import XRthon_editor
+            XRthon_editor()

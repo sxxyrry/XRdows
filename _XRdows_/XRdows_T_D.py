@@ -2,7 +2,6 @@ import webbrowser
 import pygame
 import os
 import time
-from XRthon_config import XRthon
 from S_D import (
     E_P,
     P_W,
@@ -48,7 +47,7 @@ def XRdows_T_D(self):
             E_P()
             time.sleep(1)
             running = False
-            os._exit(0)
+            return
         elif command == ':wq':
             print(' > :wq')
         elif command == '_E_L':
@@ -137,8 +136,31 @@ def XRdows_T_D(self):
             pygame.display.quit()
         elif command == 'Force_quit':
             os._exit(0)
+        elif '__scode__' in command:
+            file_t = {
+                'consts',
+                'S_D',
+                'XRdows_text',
+                'XRdows',
+            }
+            lists = command.split('__scode__')
+            print(lists)
+            if len(lists) == 2:
+                if lists[1] != '':
+                    lists[::-1]
+                    if lists[1] in file_t:
+                        with open(os.path.join(folder, './', lists[1] + '.py'), 'r', encoding='UTF-8') as f:
+                            text = ''.join(f.read())
+                            lists_ = text.split('\n')
+                            for texts in lists_:
+                                print(' > ' + texts)
+                    else:
+                        print(' > ')
+                else:
+                    print(' > ')
         elif command == 'XRthon':
+            from XRthon import XRthon
             XRthon()
-        else:
-            time.sleep(0.5)
-            print(f' > No "{command}"')
+        elif command == 'XRthon_editor':
+            from XRthon_editor import XRthon_editor
+            XRthon_editor()
