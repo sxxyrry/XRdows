@@ -110,9 +110,6 @@ def XRdows_F_D(self):
             pygame.display.quit()
         elif command == 'Force_quit':
             os._exit(0)
-        elif command == 'XRthon':
-            from XRthon import XRthon
-            XRthon()
         elif command == 'XRthon_editor':
             from XRthon_editor import XRthon_editor
             XRthon_editor()

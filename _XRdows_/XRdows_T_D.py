@@ -158,9 +158,6 @@ def XRdows_T_D(self):
                         print(' > ')
                 else:
                     print(' > ')
-        elif command == 'XRthon':
-            from XRthon import XRthon
-            XRthon()
         elif command == 'XRthon_editor':
             from XRthon_editor import XRthon_editor
             XRthon_editor()
